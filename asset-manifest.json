@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-poll/static/css/main.d1b05096.chunk.css",
+    "main.js": "/react-poll/static/js/main.0f2e1582.chunk.js",
+    "main.js.map": "/react-poll/static/js/main.0f2e1582.chunk.js.map",
+    "runtime-main.js": "/react-poll/static/js/runtime-main.91dc4fdc.js",
+    "runtime-main.js.map": "/react-poll/static/js/runtime-main.91dc4fdc.js.map",
+    "static/js/2.39513104.chunk.js": "/react-poll/static/js/2.39513104.chunk.js",
+    "static/js/2.39513104.chunk.js.map": "/react-poll/static/js/2.39513104.chunk.js.map",
+    "index.html": "/react-poll/index.html",
+    "precache-manifest.e801cac6d0bb98f5d92647d2b107f21c.js": "/react-poll/precache-manifest.e801cac6d0bb98f5d92647d2b107f21c.js",
+    "service-worker.js": "/react-poll/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/react-poll/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.39513104.chunk.js.LICENSE": "/react-poll/static/js/2.39513104.chunk.js.LICENSE",
+    "static/media/logo.svg": "/react-poll/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.91dc4fdc.js",
+    "static/js/2.39513104.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.0f2e1582.chunk.js"
+  ]
+}
