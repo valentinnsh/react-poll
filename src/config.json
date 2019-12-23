@@ -1,0 +1,10 @@
+{
+    "api": {
+	"invokeUrl": "https://ivfgg4s64i.execute-api.us-east-1.amazonaws.com/stage5"
+    },
+    "cognito" : {
+	"REGION" : "us-east-1",
+	"USER_POOOL_ID" : "us-east-1_eXRFpHIAm",
+	"APP_CLIENT_ID" : "7mhal8d9aqnkj4f0mdagp5lil3"
+    }
+}
