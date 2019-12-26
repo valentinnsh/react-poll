@@ -26,7 +26,7 @@ export default class PollAdmin extends Component {
     return (
       <div className="tile is-child box notification is-success">
         {
-          this.props.isAdmin &&
+         
           <Fragment>
             <a href="/" onClick={this.handleAddQuestion} className="poll-edit-icon">
               <FontAwesomeIcon icon="edit" />

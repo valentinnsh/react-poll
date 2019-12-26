@@ -9,17 +9,8 @@ import Footer from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
-import LogIn from './components/auth/LogIn';
-import Register from './components/auth/Register';
-import ForgotPassword from './components/auth/ForgotPassword';
-import ForgotPasswordVerification from './components/auth/ForgotPasswordVerification';
-import Welcome from './components/auth/Welcome';
-
-import {Auth } from 'aws-amplify';
-
-
 library.add(faEdit);
-var isAdmin = false;
+
 
 class App extends Component {
     state = {
@@ -27,29 +18,6 @@ class App extends Component {
         isAuthenticating: true,
         user : null
 
-    }
-
-    setAuthStatus = authenticated => {
-        this.setState({isAuthenticated: authenticated});
-    }
-
-    setUser = user => {
-        this.setState({user: user});
-    }
-
-    async componentDidMount(){
-        try{
-            const session = await Auth.currentSession();
-            this.setAuthStatus(true);
-            const user = await Auth.currentAuthenticatedUser();
-            this.setUser(user);
-            if(user.username === "admin_user") isAdmin = true;
-
-        }catch(error){
-            console.log(error);
-        }
-
-        this.setState({isAuthenticating: false});
     }
 
     render() {
@@ -63,20 +31,18 @@ class App extends Component {
 
 
         return (
-            !this.state.isAuthenticating &&
+            
             <div className="App">
               <Router>
                 <div>
                   <Navbar auth = {authProps}/>
                   <Switch>
-                    <Route exact path="/" render={(props) => <Home {...props}auth = {authProps}/>} />
-                    <Route exact path="/polls" render={(props) => <Poll {...props}auth = {authProps}/>} />
-                    <Route exact path="/admin"  render={(props) => <PollAdmin {...props}auth = {authProps}/>}/>
-	            <Route exact path="/login"  render={(props) => < LogIn{ ...props}auth = {authProps}/>}/>
-                    <Route exact path="/register"  render={(props) => <Register {...props}auth = {authProps}/>}/>
-                    <Route exact path="/forgotpassword"  render={(props) => <ForgotPassword {...props}auth = {authProps}/>}/>
-                    <Route exact path="/forgotpasswordverification"  render={(props) => <ForgotPasswordVerification {...props}auth = {authProps}/>}/>
-                    <Route exact path="/welcome"  render={(props) => <Welcome {...props}auth = {authProps}/>}/>
+                    <Route exact path="/" component = {Home} />
+                    <Route exact path="/polls" component ={ Poll} />
+                    <Route exact path="/admin"  component={ PollAdmin}/>
+	           
+                    
+                    
                   </Switch>
                   <Footer />
                 </div>
@@ -86,5 +52,5 @@ class App extends Component {
     }
 }
 
-export {isAdmin};
+
 export default App;

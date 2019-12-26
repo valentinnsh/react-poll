@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Auth } from 'aws-amplify';
-import {isAdmin} from "../App.js";
+
 
 
 export default class Navbar extends Component {
@@ -29,22 +29,20 @@ export default class Navbar extends Component {
             <a href="/polls" className="navbar-item">
             Опросы
             </a>
-              {isAdmin &&
+              
                   <a href="/admin" className="navbar-item">
                     Админ
                   </a>
-              }
             </div>
-
             <div className="navbar-end">
             <div className="navbar-item">
-	    {this.props.auth.isAuthenticated && this.props.auth.user &&(
-		<p>
-                Привет,{this.props.auth.user.username}
+	    
+		        <p>
+                Привет,
                 </p>
-	    )}
+	  
 	      <div className="buttons">
-                {!this.props.auth.isAuthenticated && (
+               
                     <div>
                     <a href="/register" className="button is-primary">
                       <strong>Зарегистрироваться</strong>
@@ -53,12 +51,12 @@ export default class Navbar extends Component {
                 Войти
                     </a>
                     </div>
-                )}
-                {this.props.auth.isAuthenticated && (
+               
+                
                     <a href="/" onClick  = {this.handleLogOut} className="button is-light">
                   Выйти
                     </a>
-                )}
+                
             </div>
             </div>
             </div>

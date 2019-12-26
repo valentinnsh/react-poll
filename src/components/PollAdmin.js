@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Poll from './Poll';
 import axios from "axios";
-import {isAdmin} from "../App.js"
+
 const config = require('../config.json');
 
 export default class PollAdmin extends Component {
@@ -43,7 +43,7 @@ export default class PollAdmin extends Component {
         "name": name,
         "varients": []
       };
-      const pollToUpdate = [...this.state.polls].find(poll => poll.id == id);
+      const pollToUpdate = [...this.state.polls].find(poll => poll.id === id);
       const updatedPolls = [...this.state.polls].filter(poll => poll.id !== id);
       pollToUpdate.questions.push(question);
       updatedPolls.push(pollToUpdate);
@@ -81,7 +81,7 @@ export default class PollAdmin extends Component {
     render() {
 	return (
       <Fragment>
-	    {isAdmin &&
+	    {
         <section className="section">
           <div className="container">
             <h1>Опросники (админ)</h1>
@@ -123,7 +123,7 @@ export default class PollAdmin extends Component {
                     {
                       this.state.polls.map((poll, index) =>
                         <Poll
-                          isAdmin={true}
+                          
                           handleAddQuestion={this.handleAddQuestion}
                           name={poll.name}
                           id={poll.id}
